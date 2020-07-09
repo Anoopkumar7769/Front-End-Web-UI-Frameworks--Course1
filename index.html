@@ -36,8 +36,7 @@
    </div>  
    </div>
   </nav>
-
-    <div id="loginModal" class="modal fade" role="dialog">
+<div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -73,8 +72,88 @@
             </div>
         </div>
     </div>
-
-    <header class="jumbotron">
+    <div id="reserveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Reserve a Table</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group row">
+              <div class="col-12 col-md-2 col-form-label">
+                <label for="numberofguest" class="col-form-label">Number of Guests</label>
+              </div>
+              <div class="col-12 col-md-8 pt-4">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" required type="radio" name="noOfGuest" id="noOfGuest1" value="1">
+                  <label class="custom-control-label" for="noOfGuest1">1</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" required type="radio" name="noOfGuest" id="noOfGuest2" value="2">
+                  <label class="custom-control-label" for="noOfGuest2">2</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" required type="radio" name="noOfGuest" id="noOfGuest3" value="3">
+                  <label class="custom-control-label" for="noOfGuest3">3</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" required type="radio" name="noOfGuest" id="noOfGuest4" value="4">
+                  <label class="custom-control-label" for="noOfGuest4">4</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" required type="radio" name="noOfGuest" id="noOfGuest5" value="5">
+                  <label class="custom-control-label" for="noOfGuest5">5</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" required type="radio" name="noOfGuest" id="noOfGuest6" value="6">
+                  <label class="custom-control-label" for="noOfGuest6">6</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12 col-md-2 col-form-label">
+                <label for="section">Section</label>
+              </div>
+              <div class="col-12 col-md-8 btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-success active pt-2">
+                  <input type="radio" required name="section" id="option2" value="1" checked autocomplete="off"> Non-Smoking
+                </label>
+                <label class="btn btn-danger pt-2">
+                  <input type="radio" required name="section" id="option3" value="2" autocomplete="off"> Smoking
+                </label>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12 col-md-2 col-form-label">
+                <label for="dateandtime" class="col-form-label">Date and Time</label>
+              </div>
+              <div class="col-12 col-md-8 pt-4">
+                <div class="form-row">
+                  <div class="col">
+                    <input required type="date" name="date" class="form-control">
+                  </div>
+                  <div class="col">
+                    <input required type="time" name="time" class="form-control">
+                  </div>
+                </div>
+              </div>
+              </div>
+            <div class="form-group row">
+              <div class="col-2"></div>
+              <div class="col-8">
+                <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Reserve</button>
+              </div>
+              </div>
+          </form>
+           </div>
+      </div>
+    </div>
+  </div>
+<header class="jumbotron">
         <div class="container">
             <div class="row row-header">
                 <div class="col-12 col-sm-6">
@@ -85,9 +164,7 @@
                     <img src="img/logo.png" class="img-fluid">
                      </div>
             <div class="col-12 col-sm-3 align-items-center">
-                              <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                        data-placement="bottom" href="#reserveform">Reserve Table</a>
+                              <a class="btn btn-warning btn-block mt-5" data-toggle="modal" data-target="#reserveModal" role="button">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -102,7 +179,7 @@
                             <img class="d-block img-fluid"
                                 src="img/uthappizza.png" alt="Uthappizza">
                             <div class="carousel-caption d-none d-md-block">
-                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-secondary">$4.99</span></h2>
+                                <h2>Uthappizza <span class="badge badge-danger">HOT</span> <span class="badge badge-pill badge-default">$4.99</span></h2>
                                 <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and
                                  Italian pizza, topped with Cerignola olives, ripe vinecherry tomatoes, Vidalia onion, Guntur chillies andBuffalo Paneer.</p>
                             </div>
@@ -196,7 +273,7 @@
                 </div>
             </div>
         </div>
-         <div class="row row-content align-items-center justify-content-center">
+        <!-- <div class="row row-content align-items-center justify-content-center">
       <div class="col-12 col-sm-8">
         <div class="card">
           <div class="card-header bg-warning">
@@ -256,7 +333,7 @@
     </div>
   </div>
 
-    </div>
+    </div>-->
 
     <footer class="footer">
         <div class="container">
