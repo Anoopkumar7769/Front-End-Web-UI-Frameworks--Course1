@@ -30,15 +30,15 @@
            <li class="nav-item"><a class="nav-link" href="file:///C:/Users/Anoop%20Kulkarni/Desktop/Coursera/unzip/Bootstrap4/conFusion/contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
        </ul>
         <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginModalOpen" role="button">
                     <span class="fa fa-sign-in"></span> Login</a>
-                </span>
+        </span>
    </div>  
    </div>
   </nav>
 <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
-            <!-- Modal content-->
+            <!--LOGIN Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
@@ -74,11 +74,11 @@
     </div>
     <div id="reserveModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="content">
-      <!-- Modal content-->
+      <!--RESERVE Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h3>Reserve a Table</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Reserve a Table</h3>
+          <button type="button" id="reserveModalClose" class="close">&times;</button>
         </div>
         <div class="modal-body">
           <form>
@@ -164,7 +164,7 @@
                     <img src="img/logo.png" class="img-fluid">
                      </div>
             <div class="col-12 col-sm-3 align-items-center">
-                              <a class="btn btn-warning btn-block mt-5" data-toggle="modal" data-target="#reserveModal" role="button">Reserve Table</a>
+                              <a class="btn btn-warning btn-block mt-5" id="reserveModalOpen" role="button">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -219,7 +219,7 @@
    
               </div>
             </div>
-       </div>
+       
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Our Lipsmacking Culinary Creations</h3>
@@ -258,7 +258,7 @@
     </div>
 
         <div class="row row-content align-items-center">
-            <div class="col-12 col-sm-4 order-sm-last col-mid-3">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
             </div>
             <div class="col col-sm order-sm-first col-md">
@@ -273,6 +273,7 @@
                             whos-who in the culinary world, he specializes in
                             creating mouthwatering Indo-Italian fusion experiences.
                             </p>
+                         </div>   
                     </div>
                 </div>
             </div>
@@ -385,11 +386,11 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
 
-    <script>
+    <!--<script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
         });
-    </script>
+    </script>-->
         <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 1000 } );
@@ -405,9 +406,19 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+               $('#reserveModalOpen').click(function() {
+        $('#reserveModal').modal('show');
+      });
+      $('#reserveModalClose').click(function() {
+        $('#reserveModal').modal('hide');
+      });
+      $('#loginModalOpen').click(function() {
+        $('#loginModal').modal('show');
+      });
+      $('#loginModalClose').click(function() {
+        $('#loginModal').modal('hide');
+      });
         });
     </script>
-
-</body>
-
+  </body>
 </html>
